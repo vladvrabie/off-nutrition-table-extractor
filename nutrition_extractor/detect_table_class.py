@@ -2,8 +2,7 @@ import tensorflow as tf
 import numpy as np
 
 class NutritionTableDetector(object):
-    def __init__(self):
-        PATH_TO_MODEL = 'data/frozen_inference_graph.pb'
+    def __init__(self, PATH_TO_MODEL = 'data/frozen_inference_graph.pb'):
         self.detection_graph = tf.Graph()
         with self.detection_graph.as_default():
             od_graph_def = tf.GraphDef()
