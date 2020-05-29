@@ -4,12 +4,12 @@ import tensorflow as tf
 from tensorflow.python.platform import gfile
 
 class NutritionTextDetector(object):
-    def __init__(self):
+    def __init__(self, PATH_TO_MODEL='data/ctpn.pb'):
         self.detection_graph = tf.Graph()
         with self.detection_graph.as_default():
             config = tf.ConfigProto(allow_soft_placement=True)
             self.sess = tf.Session(config=config)
-            with gfile.FastGFile('data/ctpn.pb', 'rb') as f:
+            with gfile.FastGFile(PATH_TO_MODEL, 'rb') as f:
                 graph_def = tf.GraphDef()
                 graph_def.ParseFromString(f.read())
                 self.sess.graph.as_default()
