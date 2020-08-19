@@ -1,9 +1,9 @@
 # -*- coding:utf-8 -*-
 import numpy as np
 from .generate_anchors import generate_anchors
-from lib.fast_rcnn.config import cfg
-from lib.fast_rcnn.bbox_transform import bbox_transform_inv, clip_boxes
-from lib.fast_rcnn.nms_wrapper import nms
+from nutrition_extractor.lib.fast_rcnn.config import cfg
+from nutrition_extractor.lib.fast_rcnn.bbox_transform import bbox_transform_inv, clip_boxes
+from nutrition_extractor.lib.fast_rcnn.nms_wrapper import nms
 
 
 DEBUG = False

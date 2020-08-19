@@ -1,5 +1,5 @@
 import argparse
-from fuzzydict import FuzzyDict
+from nutrition_extractor.fuzzydict import FuzzyDict
 
 #Make a list from the nutrient dictionary
 def make_list(fname):

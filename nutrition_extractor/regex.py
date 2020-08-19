@@ -1,7 +1,7 @@
 import re
 import argparse
-import fuzzydict
-from nutrient_list import *
+import nutrition_extractor.fuzzydict
+from nutrition_extractor.nutrient_list import *
 
 #one of the most common OCR error of returning '9' in
 # place of 'g' is being handled by this function

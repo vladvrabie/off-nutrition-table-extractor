@@ -8,14 +8,14 @@ import argparse
 
 import cv2
 import numpy as np
-from text_detection_class import NutritionTextDetector
+from nutrition_extractor.text_detection_class import NutritionTextDetector
 
 sys.path.append(os.getcwd())
-from lib.fast_rcnn.config import cfg, cfg_from_file
-from lib.fast_rcnn.test import _get_blobs
-from lib.text_connector.detectors import TextDetector
-from lib.text_connector.text_connect_cfg import Config as TextLineCfg
-from lib.rpn_msr.proposal_layer_tf import proposal_layer
+from nutrition_extractor.lib.fast_rcnn.config import cfg, cfg_from_file
+from nutrition_extractor.lib.fast_rcnn.test import _get_blobs
+from nutrition_extractor.lib.text_connector.detectors import TextDetector
+from nutrition_extractor.lib.text_connector.text_connect_cfg import Config as TextLineCfg
+from nutrition_extractor.lib.rpn_msr.proposal_layer_tf import proposal_layer
 
 def load_text_model():
     """
