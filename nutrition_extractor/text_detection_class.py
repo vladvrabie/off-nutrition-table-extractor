@@ -1,6 +1,10 @@
 import cv2
 import numpy as np
+import warnings
+warnings.filterwarnings('ignore', category=FutureWarning)
 import tensorflow as tf
+# tf.logging.set_verbosity(tf.logging.ERROR)
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 from tensorflow.python.platform import gfile
 
 class NutritionTextDetector(object):

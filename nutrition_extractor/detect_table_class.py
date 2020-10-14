@@ -1,4 +1,8 @@
+import warnings
+warnings.filterwarnings('ignore', category=FutureWarning)
 import tensorflow as tf
+# tf.logging.set_verbosity(tf.logging.ERROR)
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 import numpy as np
 
 class NutritionTableDetector(object):
