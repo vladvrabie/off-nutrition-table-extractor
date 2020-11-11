@@ -4,9 +4,17 @@ import tensorflow as tf
 # tf.logging.set_verbosity(tf.logging.ERROR)
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 import numpy as np
+import pkg_resources
 
 class NutritionTableDetector(object):
-    def __init__(self, PATH_TO_MODEL = 'data/models/nutritional_table_model.pb'):
+    def __init__(self, PATH_TO_MODEL=None):
+
+        if PATH_TO_MODEL is None:
+            PATH_TO_MODEL = pkg_resources.resource_filename(
+                package_or_requirement='nutrition_extractor',
+                resource_name='data/models/nutritional_table_model.pb'
+            )
+
         self.detection_graph = tf.Graph()
         with self.detection_graph.as_default():
             od_graph_def = tf.GraphDef()

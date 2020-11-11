@@ -6,9 +6,17 @@ import tensorflow as tf
 # tf.logging.set_verbosity(tf.logging.ERROR)
 tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 from tensorflow.python.platform import gfile
+import pkg_resources
 
 class NutritionTextDetector(object):
-    def __init__(self, PATH_TO_MODEL='data/models/text_detection_model.pb'):
+    def __init__(self, PATH_TO_MODEL=None):
+
+        if PATH_TO_MODEL is None:
+            PATH_TO_MODEL = pkg_resources.resource_filename(
+                package_or_requirement='nutrition_extractor',
+                resource_name='data/models/text_detection_model.pb'
+            )
+
         self.detection_graph = tf.Graph()
         with self.detection_graph.as_default():
             config = tf.ConfigProto(allow_soft_placement=True)
