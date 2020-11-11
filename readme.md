@@ -49,8 +49,8 @@ The code is compatible with Python 3.0+. If you find any other dependency requir
 ```
 
 ## How to test your image
-- Download the frozen model for ctpn from [here](https://github.com/eragonruan/text-detection-ctpn/releases/download/untagged-48d74c6337a71b6b5f87/ctpn.pb).
-- Save the model in `./nutrition_extractor/data` repository.
+- Download the frozen model for ctpn from [here](https://github.com/eragonruan/text-detection-ctpn/releases/download/untagged-48d74c6337a71b6b5f87/ctpn.pb) - already present in `./data` folder.
+- Save the model in `./data` repository.
 - Make a directory named `test_images` and put the images in that folder.
 - run `python detection.py -i [IMAGE-PATH]` from inside nutrition_extractor folder.
 

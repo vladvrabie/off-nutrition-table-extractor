@@ -7,7 +7,7 @@ import json
 import sys
 import os
 sys.path.append(os.path.join(os.getcwd(), 'nutrition_extractor'))
-sys.path.append(os.path.join(os.getcwd(), 'nutrition_extractor/data'))
+sys.path.append(os.path.join(os.getcwd(), 'data'))
 from detection import detect
 @csrf_exempt
 
