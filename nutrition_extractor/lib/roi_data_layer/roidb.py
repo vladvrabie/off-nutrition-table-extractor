@@ -1,8 +1,8 @@
 import numpy as np
 import PIL
-from lib.fast_rcnn.config import cfg
-from lib.fast_rcnn.bbox_transform import bbox_transform
-from lib.utils.bbox import bbox_overlaps
+from nutrition_extractor.lib.fast_rcnn.config import cfg
+from nutrition_extractor.lib.fast_rcnn.bbox_transform import bbox_transform
+from nutrition_extractor.lib.utils.bbox import bbox_overlaps
 
 def prepare_roidb(imdb):
     """Enrich the imdb's roidb by adding some derived quantities that

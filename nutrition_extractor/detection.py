@@ -3,13 +3,13 @@ import argparse
 import time
 import cv2
 
-from detect_table_class import NutritionTableDetector
-from crop import crop
-from text_detection import text_detection, load_text_model
-from process import *
-from regex import *
-from nutrient_list import *
-from spacial_map import *
+from .detect_table_class import NutritionTableDetector
+from .crop import crop
+from .text_detection import text_detection, load_text_model
+from .process import *
+from .regex import *
+from .nutrient_list import *
+from .spacial_map import *
 
 def load_model():
     """
@@ -48,13 +48,13 @@ def detect(img_path, debug):
     coords = (xmin, ymin, xmax, ymax)
 
     #Crop the image with the given bounding box
-    cropped_image = crop(image, coords, "./data/result/output.jpg", 0, True)
+    cropped_image = crop(image, coords, "./data/results/output.jpg", 0, True)
 
     #Apply several filters to the image for better results in OCR
     cropped_image = preprocess_for_ocr(cropped_image, 3)
 
     if debug:
-        cv2.imwrite('./data/result/output-opt.png', cropped_image)
+        cv2.imwrite('./data/results/output-opt.png', cropped_image)
 
     #detecting the text
     text_blob_list = text_detection(cropped_image)
@@ -72,7 +72,7 @@ def detect(img_path, debug):
     for blob_cord in text_blob_list:
         if debug:
             counter+=1
-            word_image = crop(cropped_image, blob_cord, "./data/result/{}.jpg".format(counter), 0.005, True)
+            word_image = crop(cropped_image, blob_cord, "./data/results/{}.jpg".format(counter), 0.005, True)
         else:
             word_image = crop(cropped_image, blob_cord, "./", 0.005, False)
         word_image = preprocess_for_ocr(word_image)
@@ -102,7 +102,7 @@ def detect(img_path, debug):
                     text_dict['text'] = text_dict['text'].__add__(' '+text_dict_test['text'])
                     text_dict['string_type'] = 0
 
-    fuzdict=make_fuzdict('data/nutrients.txt')
+    fuzdict=make_fuzdict('data/keywords/nutrients.txt')
 
     #Add the nutritional label and its value to the nutrient_dict
     for text_dict in text_location_list:

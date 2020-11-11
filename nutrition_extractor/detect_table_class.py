@@ -6,7 +6,7 @@ tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 import numpy as np
 
 class NutritionTableDetector(object):
-    def __init__(self, PATH_TO_MODEL = 'data/frozen_inference_graph.pb'):
+    def __init__(self, PATH_TO_MODEL = 'data/models/nutritional_table_model.pb'):
         self.detection_graph = tf.Graph()
         with self.detection_graph.as_default():
             od_graph_def = tf.GraphDef()

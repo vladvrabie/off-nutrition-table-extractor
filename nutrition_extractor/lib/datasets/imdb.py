@@ -3,8 +3,8 @@ import os.path as osp
 import PIL
 import numpy as np
 import scipy.sparse
-from lib.utils.bbox import bbox_overlaps
-from lib.fast_rcnn.config import cfg
+from nutrition_extractor.lib.utils.bbox import bbox_overlaps
+from nutrition_extractor.lib.fast_rcnn.config import cfg
 
 class imdb(object):
 

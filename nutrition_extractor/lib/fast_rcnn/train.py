@@ -2,10 +2,10 @@ from __future__ import print_function
 import numpy as np
 import os
 import tensorflow as tf
-from lib.roi_data_layer.layer import RoIDataLayer
-from lib.utils.timer import Timer
-from lib.roi_data_layer import roidb as rdl_roidb
-from lib.fast_rcnn.config import cfg
+from nutrition_extractor.lib.roi_data_layer.layer import RoIDataLayer
+from nutrition_extractor.lib.utils.timer import Timer
+from nutrition_extractor.lib.roi_data_layer import roidb as rdl_roidb
+from nutrition_extractor.lib.fast_rcnn.config import cfg
 
 _DEBUG = False
 
