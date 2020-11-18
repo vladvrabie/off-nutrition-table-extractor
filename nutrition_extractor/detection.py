@@ -1,5 +1,6 @@
 # from PIL import Image
 import argparse
+import pkg_resources
 import time
 import cv2
 
@@ -102,7 +103,13 @@ def detect(img_path, debug):
                     text_dict['text'] = text_dict['text'].__add__(' '+text_dict_test['text'])
                     text_dict['string_type'] = 0
 
-    fuzdict=make_fuzdict('data/keywords/nutrients.txt')
+    PATH_TO_KEYWORDS = pkg_resources.resource_filename(
+        package_or_requirement='nutrition_extractor',
+        resource_name='data/keywords/nutrients.txt'
+    )
+    if debug:
+        print("Path to keywords file: " + PATH_TO_KEYWORDS)
+    fuzdict=make_fuzdict(PATH_TO_KEYWORDS)
 
     #Add the nutritional label and its value to the nutrient_dict
     for text_dict in text_location_list:

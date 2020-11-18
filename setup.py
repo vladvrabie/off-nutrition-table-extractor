@@ -35,6 +35,6 @@ setuptools.setup(
         'interactive': ['matplotlib', 'jupyter'],
     },
     package_data={
-        'nutrition_extractor': ['data/models/*'],
+        'nutrition_extractor': ['data/models/*', 'data/keywords/*'],
     },
 )
