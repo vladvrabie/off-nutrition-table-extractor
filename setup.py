@@ -19,9 +19,12 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.6, <3.8',
     install_requires=[
-        'numpy',
+        # numpy 1.19.4 has a problem on Windows 2004/20H2
+        # see https://tinyurl.com/y3dm3h86
+        # remove restriction on numpy version after issue is solved
+        'numpy<=1.19.3',
         'tensorflow==1.15',
         'Pillow',
         'opencv-python',
