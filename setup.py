@@ -23,7 +23,6 @@ setuptools.setup(
     install_requires=[
         'numpy',
         'tensorflow==1.15',
-        'PIL',
         'Pillow',
         'opencv-python',
         'pytesseract',

@@ -1,6 +1,5 @@
 numpy
 tensorflow==1.15
-PIL
 Pillow
 opencv-python
 # tesseract
