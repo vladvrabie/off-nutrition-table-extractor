@@ -1,3 +1,4 @@
+images/results/
 data/ctpn.pb
 nutrition_extractor/data/ctpn.pb
 nutrition_extractor/test_images/*

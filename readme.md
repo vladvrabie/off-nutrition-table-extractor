@@ -12,17 +12,17 @@ The pipeline is made up of three major parts namely table detection, text detect
 ### Table Detection
 For detecting tables in an image, we are using the Single Shot Detector (SSD) object detection model. The model is trained on Tensorflow's Object Detection API. The provided Jupyter Notebook shows how we are using the pre-trained graph to detect tables in product images.
 Before running the notebook, install the object detection model from the [Tensorflow's Github Repository](https://github.com/tensorflow/models).
-![Table detection](/data/images/table_detection.jpeg)
+![Table detection](/images/table_detection.jpeg)
 
 ### Text Detection and extraction
 Text detection is done using the [text-detection-ctpn](https://github.com/eragonruan/text-detection-ctpn) which uses fast-rcnn to extract textual regions in the image. In future, we are planning to update it to a faster and more accurate text detection model.
-![Text Detection](/data/images/text_detection.jpg)
+![Text Detection](/images/text_detection.jpg)
 
 ### OCR and post-processing
 For the text recognition, we are using Tesseract OCR. Every text box detected from the text detection step will be passed through the OCR and a raw string will be returned which is then passed throught many post processing steps that clean the string (through regular expressions) and rectify any spelling mistakes in the string (using the [symspell](https://github.com/wolfgarbe/SymSpell) spelling correction algorithm).
 
 ### Final Results
-![Full pipeline detection](/data/images/final_result.jpg)
+![Full pipeline detection](/images/final_result.jpg)
 Output for the above image is given below:
 ```
 Nutritional content = {
