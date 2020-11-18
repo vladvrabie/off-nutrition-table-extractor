@@ -14,6 +14,7 @@ class NutritionTableDetector(object):
                 package_or_requirement='nutrition_extractor',
                 resource_name='data/models/nutritional_table_model.pb'
             )
+        # print("Path to detect table model: " + PATH_TO_MODEL)
 
         self.detection_graph = tf.Graph()
         with self.detection_graph.as_default():

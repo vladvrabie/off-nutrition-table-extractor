@@ -17,7 +17,7 @@ def make_fuzdict(fname):
      '''
      @param fname: path to the dictionary
      '''
-     with open(fname) as f:
+     with open(fname, encoding='utf8') as f:
          content = f.readlines()
      # you may also want to remove whitespace characters like `\n` at the end of each line
      content = [x.strip() for x in content]

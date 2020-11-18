@@ -23,8 +23,9 @@ def crop(image_obj, coords, saved_location, extend_ratio=0, SAVE=False):
     cropped_image = image_obj[modified_coords[1]:modified_coords[3], modified_coords[0]:modified_coords[2]]
 
     if(SAVE):
-        cv2.imwrite(saved_location, cropped_image)
-
+        # print(f"Saving cropped image with shape {cropped_image.shape}")
+        if 0 not in cropped_image.shape:
+            cv2.imwrite(saved_location, cropped_image)
 
     return cropped_image
 

@@ -20,12 +20,12 @@ def preprocess_for_ocr(img, enhance=1):
         img = contrast.enhance(enhance)
 
         img = np.asarray(img)
+    if 0 not in img.shape:
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        #img = cv2.GaussianBlur(img, (5,5), 0)
 
-    #img = cv2.GaussianBlur(img, (5,5), 0)
-
-    img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
+        img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
 
     return img
 

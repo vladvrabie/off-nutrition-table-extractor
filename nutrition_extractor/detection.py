@@ -30,6 +30,8 @@ def detect(img_path, debug):
     #Make the table detector class and predict the score
 
     image = cv2.imread(img_path)
+    if debug and image is None:
+        print("Input image is None")
     boxes, scores, classes, num  = obj.get_classification(image)
     #Get the dimensions of the image
     width = image.shape[1]
