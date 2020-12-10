@@ -25,7 +25,7 @@ setuptools.setup(
         # see https://tinyurl.com/y3dm3h86
         # remove restriction on numpy version after issue is solved
         'numpy<=1.19.3',
-        'tensorflow==1.15',
+        'tensorflow>=1.14',  # maybe even older versions work
         'Pillow',
         'opencv-python',
         'pytesseract',
