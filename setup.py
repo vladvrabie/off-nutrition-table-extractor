@@ -19,22 +19,19 @@ setuptools.setup(
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6, <3.8',
+    python_requires=">=3.6, <3.8",
     install_requires=[
-        # numpy 1.19.4 has a problem on Windows 2004/20H2
-        # see https://tinyurl.com/y3dm3h86
-        # remove restriction on numpy version after issue is solved
-        'numpy<=1.19.3',
-        'tensorflow >=1.14, <2',  # maybe even older versions work
-        'Pillow',
-        'opencv-python',
-        'pytesseract',
-        'easydict',
+        "numpy",
+        "tensorflow >=1.14, <2",  # maybe even older versions work
+        "Pillow",
+        "opencv-python",
+        "pytesseract",
+        "easydict",
     ],
     extras_require={
-        'interactive': ['matplotlib', 'jupyter'],
+        "interactive": ["matplotlib", "jupyter"],
     },
     package_data={
-        'nutrition_extractor': ['data/models/*', 'data/keywords/*'],
+        "nutrition_extractor": ["data/models/*", "data/keywords/*"],
     },
 )
